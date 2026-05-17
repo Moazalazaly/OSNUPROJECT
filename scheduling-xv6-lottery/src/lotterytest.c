@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
             // CPU-bound loop to force the scheduler to run
             // 'volatile' prevents the compiler from optimizing this loop away
             volatile int dummy = 0;
-            for (int j = 0; j < 200000000; j++) {
+            for (int j = 0; j < 500000000; j++) {
                 dummy += j;
             }
 

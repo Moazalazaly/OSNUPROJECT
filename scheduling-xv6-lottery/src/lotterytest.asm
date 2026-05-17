@@ -78,18 +78,18 @@ int main(int argc, char *argv[]) {
             volatile int dummy = 0;
   8a:	31 c0                	xor    %eax,%eax
   8c:	89 45 d8             	mov    %eax,-0x28(%ebp)
-            for (int j = 0; j < 200000000; j++) {
+            for (int j = 0; j < 500000000; j++) {
   8f:	31 c0                	xor    %eax,%eax
   91:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
                 dummy += j;
   98:	8b 55 d8             	mov    -0x28(%ebp),%edx
   9b:	01 c2                	add    %eax,%edx
-            for (int j = 0; j < 200000000; j++) {
+            for (int j = 0; j < 500000000; j++) {
   9d:	83 c0 01             	add    $0x1,%eax
                 dummy += j;
   a0:	89 55 d8             	mov    %edx,-0x28(%ebp)
-            for (int j = 0; j < 200000000; j++) {
-  a3:	3d 00 c2 eb 0b       	cmp    $0xbebc200,%eax
+            for (int j = 0; j < 500000000; j++) {
+  a3:	3d 00 65 cd 1d       	cmp    $0x1dcd6500,%eax
   a8:	75 ee                	jne    98 <main+0x98>
             int end = uptime();
   aa:	e8 0c 03 00 00       	call   3bb <uptime>
